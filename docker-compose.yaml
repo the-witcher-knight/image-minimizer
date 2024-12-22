@@ -1,0 +1,14 @@
+services:
+  server:
+    container_name: ${PROJECT_NAME}-server
+    image: ${PROJECT_NAME}-local:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    networks:
+      - local-network
+
+networks:
+  local-network:
